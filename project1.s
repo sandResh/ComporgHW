@@ -18,3 +18,6 @@
 
 	    # Store input string in $s0.
 	    la $s0, input
+		# Store the result in $s2 and offset in $s1.
+	   		li $s2, 0
+	   		li $s1, 0
