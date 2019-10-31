@@ -43,6 +43,9 @@
 	   		li $v0, 1
 	   		add $a0, $s2, $0
 	   		syscall
+		# Exit the program
+	    li $v0, 10
+	    syscall
 
 
 
