@@ -47,6 +47,12 @@
 	    li $v0, 10
 	    syscall
 
+		getNumberFromByte:
+			li $v0, 0
+
+			blt $a0, 48, exitNFB
+			bgt $a0, 116, exitNFB
+
 
 
 
