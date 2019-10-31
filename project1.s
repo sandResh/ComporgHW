@@ -35,6 +35,11 @@
 
 	   			add $s2, $s2, $v1
 
+				# The loop hasn't completed; so go back to the start.
+	   			addu $s1, $s1, 1
+	   			b loop1
+
+
 				
 
 
