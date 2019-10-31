@@ -38,6 +38,13 @@
 				# The loop hasn't completed; so go back to the start.
 	   			addu $s1, $s1, 1
 	   			b loop1
+			exitLoop1:
+	   		# Print the integer.
+	   		li $v0, 1
+	   		add $a0, $s2, $0
+	   		syscall
+
+
 
 
 				
