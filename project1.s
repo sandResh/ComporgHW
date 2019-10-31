@@ -30,3 +30,11 @@
 				beq $t1, 10, exitLoop1 #branches to exitloop1 if t1 is equal to 10
 	   			beq $t1, 0, exitLoop1
 
+				add $a0, $t1, $0
+	   			jal getNumberFromByte
+
+	   			add $s2, $s2, $v1
+
+				
+
+
