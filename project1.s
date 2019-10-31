@@ -21,3 +21,8 @@
 		# Store the result in $s2 and offset in $s1.
 	   		li $s2, 0
 	   		li $s1, 0
+			
+			loop1:
+	   			# changing byte offset.
+	   			add $t0, $s0, $s1
+	   			lb $t1, ($t0)
