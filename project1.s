@@ -8,4 +8,8 @@
 	    li $v0, 4
 	    la $a0, inputPrompt
 	    syscall
-
+	# Input the string.
+	    li $v0, 8
+	    la $a0, input
+	    li $a1, 11
+	    syscall
