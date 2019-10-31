@@ -47,16 +47,36 @@
 	    li $v0, 10
 	    syscall
 
-		getNumberFromByte:
-			li $v0, 0
+	getNumberFromByte:
+		li $v0, 0
 
-			blt $a0, 48, exitNFB
-			bgt $a0, 116, exitNFB
+		blt $a0, 48, exitNFB
+		bgt $a0, 116, exitNFB
 
-			slti $t8, $a0, 58		# If the char is less than 59, the char is a number
-			beq $t8, 1, numbers
+		slti $t8, $a0, 58		# If the char is less than 59, the char is a number
+		beq $t8, 1, numbers
 
-			blt $a0, 65, exitNFB   # If the byte falls betweeen 59
+		blt $a0, 65, exitNFB   # If the byte falls betweeen 59
+
+		slti $t8, $a0, 85		# If the char is less than 84 ('T') and greater than 64, the char is captial letter
+		beq $t8, 1, capital
+
+		blt $a0, 97, exitNFB    # IF the char comes before 'a'.
+		
+		slti $t8, $a0, 117		# If the char is less than 103, and greater than 71, the char is small letter
+		beq $t8, 1, small
+		
+		numbers:
+			addi $v1, $a0, -48	# subtract 48 from the numbers to get the decimal value
+			b exitNFB 
+		capital:
+			addi $v1, $a0, -55	# subtract 55 from the capital letters to get the decimal value
+			b exitNFB 
+		small:
+			addi $v1, $a0, -87	# subtract 87 from the small letters to get the decimal value
+		exitNFB:
+			jr $ra
+
 
 
 
