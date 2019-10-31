@@ -77,6 +77,13 @@
 		exitNFB:
 			jr $ra
 
+	printNewLine:  # Function to call newLine
+		li $v0, 4
+		la $a0, newLine
+		syscall
+
+		jr $ra
+
 
 
 
