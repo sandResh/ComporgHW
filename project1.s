@@ -26,3 +26,7 @@
 	   			# changing byte offset.
 	   			add $t0, $s0, $s1
 	   			lb $t1, ($t0)
+
+				beq $t1, 10, exitLoop1 #branches to exitloop1 if t1 is equal to 10
+	   			beq $t1, 0, exitLoop1
+
