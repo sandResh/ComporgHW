@@ -53,6 +53,11 @@
 			blt $a0, 48, exitNFB
 			bgt $a0, 116, exitNFB
 
+			slti $t8, $a0, 58		# If the char is less than 59, the char is a number
+			beq $t8, 1, numbers
+
+			blt $a0, 65, exitNFB   # If the byte falls betweeen 59
+
 
 
 
