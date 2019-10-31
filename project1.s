@@ -13,3 +13,8 @@
 	    la $a0, input
 	    li $a1, 11
 	    syscall
+
+		jal printNewLine #jumps and links to printnewline
+
+	    # Store input string in $s0.
+	    la $s0, input
