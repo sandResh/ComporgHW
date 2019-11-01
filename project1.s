@@ -58,6 +58,11 @@
 	    li $v0, 10
 	    syscall
 
+	# Function to convert a byte value of char into equivalent decimal number.
+	# Args:
+	#	$a0: The char to convert to byte.
+	# Returns:
+	#	$v1: The converted value for valid chars or 0 for invalid chars.
 	getNumberFromByte:
 		# Initialize the return value to 0.
 		li $v1, 0
@@ -97,10 +102,12 @@
 		# Subtract 87 from the small letters to get the decimal value.
 		small:
 			addi $v1, $a0, -87	
+
 		exitNFB:
 			jr $ra
 
-	printNewLine:  # Function to call newLine
+	# Function to print a new line.
+	printNewLine:
 		li $v0, 4
 		la $a0, newLine
 		syscall
